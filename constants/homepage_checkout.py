@@ -14,3 +14,4 @@ class HomePage:
     VERIFY_PAYMENT_OPEN_TEXT = "Pay with Credit Card"
     SHIPPING_STATE_XPATH = './/select'
     SHIPPING_STATE_OPTION = './/option[@value=3438]'
+    THIRD_BUY_NOW_XPATH = './/a[@href="https://app.suvie.com/purchase/?product-sku=PKG_CHEF_SV3_A1&site-version=a"]'
