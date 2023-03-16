@@ -24,3 +24,4 @@ def random_user():
     user = User()
     user.fill_data()
     return user
+

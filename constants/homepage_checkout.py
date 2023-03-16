@@ -1,6 +1,6 @@
 class HomePage:
     SHOP_BUTTON_XPATH = './/a[@class="btn btn_primary ml-6 min-w-[7.8125rem] xl:ml-4"][@href="/shop/"]'
-    SECOND_BUY_NOW_XPATH = './/a[@class="btn btn_primary mx-auto mb-3 block w-full"][@href="https://app.suvie.com/purchase/?product-sku=PKG_SS_SV3_A1&site-version=a"]'
+    SECOND_BUY_NOW_XPATH = './/a[@href="https://app.suvie.com/purchase/?product-sku=PKG_SS_SV3_A1&site-version=a"]'
     CONTINUE_WITHOUT_ADD_XPATH = './/button[@class="btn btn_primary btn_size_default btn_rounded_default btn_size_default btn_rounded_default w-full"]'
     CONTACT_EMAIL_PLACEHOLDER = './/input[@placeholder="Email"]'
     CONTACT_FIRSTNAME_PLACEHOLDER = './/input[@placeholder="First name"]'
@@ -15,3 +15,9 @@ class HomePage:
     SHIPPING_STATE_XPATH = './/select'
     SHIPPING_STATE_OPTION = './/option[@value=3438]'
     THIRD_BUY_NOW_XPATH = './/a[@href="https://app.suvie.com/purchase/?product-sku=PKG_CHEF_SV3_A1&site-version=a"]'
+    FIRST_BUY_NOW_XPATH = './/a[@href="https://app.suvie.com/checkout/start/?product-sku=PKG_SV3_A1&site-version=a"]'
+    START_ZIPCODE_PLACEHOLDER = './/input[@placeholder="Zip Code"]'
+    START_EMAIL_PLACEHOLDER = './/input[@placeholder="Email Address"]'
+    START_CONTINUE_BTN_XPATH = './/button[@data-cy="checkout-start-form-submit-button"]'
+    MEAL_PLAN_CONTINUE_XPATH = './/button[@data-cy="checkout-meal-plan-form-submit-button"]'
+    CHECK_CONTINUE_WITHOUT_XPATH = './/button[@data-cy="checkout-form-addons-section-next-button"]'

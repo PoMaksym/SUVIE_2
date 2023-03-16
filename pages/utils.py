@@ -22,7 +22,7 @@ def random_low():
 
 def random_num():
     """Generate random number"""
-    return str(random.randint(111111, 999999))
+    return str(random.randint(90210, 90210))
 
 
 def random_str(length=5):
@@ -82,4 +82,4 @@ class User:
         self.lastname = f"{random_str(6)}{random_num()}" if not lastname else lastname
         self.address = f"{random_str(6)}{random_num()}" if not address else address
         self.city = f"{random_str(6)}{random_num()}" if not city else city
-        self.zip = f"{random_num(5)}" if not zip else zip
+        self.zip = f"{random_num()}" if not zip else zip
