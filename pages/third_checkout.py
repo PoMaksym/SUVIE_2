@@ -6,7 +6,7 @@ from pages.homepage import StartPage
 from pages.utils import wait_until_ok, log_decorator
 
 
-class FirstCheckoutPage(BasePage):
+class ThirdCheckoutPage(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
         self.constants = HomePage()
@@ -14,22 +14,17 @@ class FirstCheckoutPage(BasePage):
 
     @wait_until_ok(timeout=5, period=1)
     # @log_decorator
-    def fill_users_data(self, user):
-        """Fill ZipCode and Email"""
-        self.fill_field(xpath=self.constants.START_ZIPCODE_PLACEHOLDER, value=user.zip)
-        self.fill_field(xpath=self.constants.START_EMAIL_PLACEHOLDER, value=user.email)
-        sleep(5)
-        """Click on Continue"""
-        self.click(xpath=self.constants.START_CONTINUE_BTN_XPATH)
-        sleep(5)
-        """Click on Continue in MealPlan"""
-        self.click(xpath=self.constants.MEAL_PLAN_CONTINUE_XPATH)
+    def fill_users_data_3(self, user):
         """Skip Add-ons and click on Continue"""
-        self.click(xpath=self.constants.CHECK_CONTINUE_WITHOUT_XPATH)
+        self.click(xpath=self.constants.CONTINUE_WITHOUT_ADD_XPATH)
+        """Fill Contact fields - email field"""
+        self.fill_field(xpath=self.constants.CONTACT_EMAIL_PLACEHOLDER, value=user.email)
         """Fill first name fild"""
         self.fill_field(xpath=self.constants.CONTACT_FIRSTNAME_PLACEHOLDER, value=user.firstname)
         """Fill last name field"""
         self.fill_field(xpath=self.constants.CONTACT_LASTNAME_PLACEHOLDER, value=user.lastname)
+        """Click on Next button"""
+        self.click(xpath=self.constants.CONTACT_NEXT_BUTTON_XPATH)
         """Fill Shipping address"""
         self.fill_field(xpath=self.constants.SHIPPING_ADDRESS_PLACEHOLDER, value=user.address)
         """Fill Shipping city"""

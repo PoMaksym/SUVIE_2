@@ -2,7 +2,7 @@ import pytest
 from selenium import webdriver
 
 from constants.base import DRIVER_PATH, BASE_URL
-from pages.checkouts_page import StartPage
+from pages.homepage import StartPage
 from pages.utils import User
 
 
