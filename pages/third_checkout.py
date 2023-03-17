@@ -2,7 +2,6 @@ from time import sleep
 
 from constants.homepage_checkout import HomePage
 from pages.base_page import BasePage
-from pages.homepage import StartPage
 from pages.utils import wait_until_ok, log_decorator
 
 
@@ -10,7 +9,6 @@ class ThirdCheckoutPage(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
         self.constants = HomePage()
-        self.homepage = StartPage
 
     @wait_until_ok(timeout=5, period=1)
     # @log_decorator
