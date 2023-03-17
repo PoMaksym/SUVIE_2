@@ -118,6 +118,4 @@ class StartPage(BasePage):
         self.__scroll_down_page()
         self.click(xpath=self.constants.FIRST_BUY_NOW_XPATH)
         from pages.first_checkout import FirstCheckoutPage
-        # return FirstCheckoutPage(self.driver)
-        first_checkout_page = FirstCheckoutPage
-        first_checkout_page.fill_users_data(user)
+        return FirstCheckoutPage(self.driver)
