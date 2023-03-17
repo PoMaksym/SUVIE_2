@@ -20,7 +20,7 @@ class StartPage(BasePage):
     @wait_until_ok(timeout=5, period=1)
     @log_decorator
     def second_checkout(self, user):
-        """Go through second checkout"""
+        """Go through checkout"""
         self.click(xpath=self.constants.SHOP_BUTTON_XPATH)
         """Click on Buy now"""
         self.find_element(xpath=self.constants.SECOND_BUY_NOW_XPATH)
@@ -49,6 +49,13 @@ class StartPage(BasePage):
         """Click on Next button"""
         self.click(xpath=self.constants.SHIPPING_NEXT_BUTTON_XPATH)
         sleep(5)
+
+    @wait_until_ok(timeout=5, period=0.5)
+    @log_decorator
+    def verify_total_checkout_without(self):
+        assert self.get_element_text(
+            xpath=self.constants.SECOND_TOTAL_WITHOUT_XPATH) == self.constants.SECOND_TOTAL_VERIFY_TEXT
+        f"Actual: {self.get_element_text(xpath=self.constants.SECOND_TOTAL_WITHOUT_XPATH)}"
 
     @wait_until_ok(timeout=5, period=0.5)
     @log_decorator
@@ -102,7 +109,7 @@ class StartPage(BasePage):
 
     @wait_until_ok(timeout=5, period=1)
     @log_decorator
-    def first_checkout(self, user):
+    def go_to_first_checkout(self, user):
         """Go through second checkout"""
         self.click(xpath=self.constants.SHOP_BUTTON_XPATH)
         """Click on Buy now"""
@@ -110,37 +117,7 @@ class StartPage(BasePage):
         sleep(3)
         self.__scroll_down_page()
         self.click(xpath=self.constants.FIRST_BUY_NOW_XPATH)
-        """Fill ZipCode and Email"""
-        self.fill_field(xpath=self.constants.START_ZIPCODE_PLACEHOLDER, value=user.zip)
-        self.fill_field(xpath=self.constants.START_EMAIL_PLACEHOLDER, value=user.email)
-        sleep(5)
-        """Click on Continue"""
-        self.click(xpath=self.constants.START_CONTINUE_BTN_XPATH)
-        sleep(5)
-        """Click on Continue in MealPlan"""
-        self.click(xpath=self.constants.MEAL_PLAN_CONTINUE_XPATH)
-        """Skip Add-ons and click on Continue"""
-        self.click(xpath=self.constants.CHECK_CONTINUE_WITHOUT_XPATH)
-        """Fill first name fild"""
-        self.fill_field(xpath=self.constants.CONTACT_FIRSTNAME_PLACEHOLDER, value=user.firstname)
-        """Fill last name field"""
-        self.fill_field(xpath=self.constants.CONTACT_LASTNAME_PLACEHOLDER, value=user.lastname)
-        """Fill Shipping address"""
-        self.fill_field(xpath=self.constants.SHIPPING_ADDRESS_PLACEHOLDER, value=user.address)
-        """Fill Shipping city"""
-        self.fill_field(xpath=self.constants.SHIPPING_CITY_PLACEHOLDER, value=user.city)
-        """Fill State field"""
-        self.click(xpath=self.constants.SHIPPING_STATE_XPATH)
-        self.click(xpath=self.constants.SHIPPING_STATE_OPTION)
-        """Fill Shipping Zip"""
-        self.fill_field(xpath=self.constants.SHIPPING_ZIP_PLACEHOLDER, value=user.zip)
-        """Click on Next button"""
-        self.click(xpath=self.constants.SHIPPING_NEXT_BUTTON_XPATH)
-        sleep(5)
-
-    @wait_until_ok(timeout=5, period=0.5)
-    @log_decorator
-    def verify_checkout_complete(self):
-        assert self.get_element_text(
-            self.constants.VERIFY_PAYMENT_OPEN_XPATH) == self.constants.VERIFY_PAYMENT_OPEN_TEXT
-        f"Actual: {self.get_element_text(xpath=self.constants.VERIFY_PAYMENT_OPEN_XPATH)}"
+        from pages.first_checkout import FirstCheckoutPage
+        # return FirstCheckoutPage(self.driver)
+        first_checkout_page = FirstCheckoutPage
+        first_checkout_page.fill_users_data(user)

@@ -21,3 +21,5 @@ class HomePage:
     START_CONTINUE_BTN_XPATH = './/button[@data-cy="checkout-start-form-submit-button"]'
     MEAL_PLAN_CONTINUE_XPATH = './/button[@data-cy="checkout-meal-plan-form-submit-button"]'
     CHECK_CONTINUE_WITHOUT_XPATH = './/button[@data-cy="checkout-form-addons-section-next-button"]'
+    SECOND_TOTAL_WITHOUT_XPATH = './/div[@data-cy="order-total-total-price"]'
+    SECOND_TOTAL_VERIFY_TEXT = "$799.00"
