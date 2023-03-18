@@ -49,7 +49,7 @@ class StartPage(BasePage):
     @wait_until_ok(timeout=5, period=1)
     @log_decorator
     def navigate_to_first_checkout(self, user):
-        """Go through second checkout"""
+        """Navigate to first checkout"""
         self.click(xpath=self.constants.SHOP_BUTTON_XPATH)
         """Click on Buy now"""
         self.find_element(xpath=self.constants.FIRST_BUY_NOW_XPATH)
