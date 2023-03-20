@@ -13,13 +13,12 @@ class StartPage(BasePage):
     def __scroll_down_and_click(self, xpath, speed=5):
         current_scroll_position, new_height = 2, 2
         while current_scroll_position <= new_height:
-            print('current_scroll_position - {}, new_height - {}'.format(current_scroll_position, new_height))
             current_scroll_position += speed
             self.driver.execute_script("window.scrollTo(0, {});".format(current_scroll_position))
             try:
                 self.click(xpath=xpath)
                 return
-            except Exception as e:
+            except Exception:
                 new_height = self.driver.execute_script("return document.body.scrollHeight")
 
     @wait_until_ok(timeout=5, period=1)
