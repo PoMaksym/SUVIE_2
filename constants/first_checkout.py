@@ -14,3 +14,6 @@ class FirstCheckout:
     SHIPPING_NEXT_BUTTON_XPATH = './/button[@data-cy="checkout-form-shipping-section-next-button"]'
     VERIFY_PAYMENT_OPEN_XPATH = './/button[contains(text(), "Pay with Credit Card")]'
     VERIFY_PAYMENT_OPEN_TEXT = "Pay with Credit Card"
+    TERMS_COND_XPATH = './/a[@href="https://www.suvie.com/terms-and-conditions/"]'
+    VERIFY_TERMS_COND_XPATH = './/span[contains(text(), "Home Tech Innovation, Inc. Terms and Conditions")]'
+    VERIFY_TERMS_COND_TEXT = "Home Tech Innovation, Inc. Terms and Conditions"

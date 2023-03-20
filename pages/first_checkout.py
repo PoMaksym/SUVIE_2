@@ -1,5 +1,7 @@
 from time import sleep
 
+import requests
+
 from constants.first_checkout import FirstCheckout
 from pages.base_page import BasePage
 from pages.utils import wait_until_ok, log_decorator
@@ -47,3 +49,11 @@ class FirstCheckoutPage(BasePage):
         assert self.get_element_text(
             self.constants.VERIFY_PAYMENT_OPEN_XPATH) == self.constants.VERIFY_PAYMENT_OPEN_TEXT
         f"Actual: {self.get_element_text(xpath=self.constants.VERIFY_PAYMENT_OPEN_XPATH)}"
+
+    @wait_until_ok(timeout=5, period=0.5)
+    def verify_terms_opened(self):
+        """Click on Terms and Conditions link"""
+        self.click(self.constants.TERMS_COND_XPATH)
+        """Verify page is opened"""
+        response = requests.get("https://www.suvie.com/terms-and-conditions/")
+        assert response.status_code == 200
