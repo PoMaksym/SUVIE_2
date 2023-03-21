@@ -15,5 +15,6 @@ class FirstCheckout:
     VERIFY_PAYMENT_OPEN_XPATH = './/button[contains(text(), "Pay with Credit Card")]'
     VERIFY_PAYMENT_OPEN_TEXT = "Pay with Credit Card"
     TERMS_COND_XPATH = './/a[@href="https://www.suvie.com/terms-and-conditions/"]'
-    VERIFY_TERMS_COND_XPATH = './/span[contains(text(), "Home Tech Innovation, Inc. Terms and Conditions")]'
+    VERIFY_TERMS_COND_XPATH = './/div[@class="container mx-auto px-3 relative z-[1] max-w-5xl"]'
     VERIFY_TERMS_COND_TEXT = "Home Tech Innovation, Inc. Terms and Conditions"
+    PRIVACY_POLICY_XPATH = './/a[@href="https://www.suvie.com/privacy-policy/"]'

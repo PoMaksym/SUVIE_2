@@ -1,5 +1,3 @@
-from time import sleep
-
 from constants.homepage_checkout import HomePage
 from pages.base_page import BasePage
 from pages.utils import wait_until_ok, log_decorator
@@ -27,7 +25,6 @@ class StartPage(BasePage):
         """Go through checkout"""
         self.click(xpath=self.constants.SHOP_BUTTON_XPATH)
         """Click on Buy now"""
-        sleep(3)
         self.__scroll_down_and_click(xpath=self.constants.SECOND_BUY_NOW_XPATH)
         from pages.second_checkout import SecondCheckoutPage
         return SecondCheckoutPage(self.driver)
@@ -38,7 +35,6 @@ class StartPage(BasePage):
         """Click on Shop button in homepage"""
         self.click(xpath=self.constants.SHOP_BUTTON_XPATH)
         """Click on Buy now"""
-        sleep(3)
         self.__scroll_down_and_click(xpath=self.constants.THIRD_BUY_NOW_XPATH)
         from pages.third_checkout import ThirdCheckoutPage
         return ThirdCheckoutPage(self.driver)
@@ -49,7 +45,6 @@ class StartPage(BasePage):
         """Navigate to first checkout"""
         self.click(xpath=self.constants.SHOP_BUTTON_XPATH)
         """Click on Buy now"""
-        sleep(3)
         self.__scroll_down_and_click(xpath=self.constants.FIRST_BUY_NOW_XPATH)
         from pages.first_checkout import FirstCheckoutPage
         return FirstCheckoutPage(self.driver)

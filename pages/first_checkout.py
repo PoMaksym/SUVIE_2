@@ -57,3 +57,11 @@ class FirstCheckoutPage(BasePage):
         """Verify page is opened"""
         response = requests.get("https://www.suvie.com/terms-and-conditions/")
         assert response.status_code == 200
+        # assert self.get_element_text(self.constants.VERIFY_TERMS_COND_XPATH) == self.constants.VERIFY_TERMS_COND_TEXT
+        # f"Actual: {self.get_element_text(xpath=self.constants.VERIFY_TERMS_COND_XPATH)}"
+
+    def verify_privacy_opened(self):
+        """Privacy page is opened"""
+        self.click(self.constants.PRIVACY_POLICY_XPATH)
+        response = requests.get("https://www.suvie.com/privacy-policy/")
+        assert response.status_code == 200

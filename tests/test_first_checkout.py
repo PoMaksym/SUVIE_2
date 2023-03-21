@@ -7,3 +7,7 @@ class TestFirstCheckout:
     def test_terms_cond_opened(self, start_page, random_user):
         terms_cond = start_page.navigate_to_first_checkout(random_user)
         terms_cond.verify_terms_opened()
+
+    def test_privacy_opened(self, start_page, random_user):
+        privacy = start_page.navigate_to_first_checkout(random_user)
+        privacy.verify_privacy_opened()

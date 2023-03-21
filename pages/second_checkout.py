@@ -11,7 +11,7 @@ class SecondCheckoutPage(BasePage):
         self.constants = HomePage()
 
     @wait_until_ok(timeout=5, period=1)
-    # @log_decorator
+    @log_decorator
     def fill_users_data_2(self, user):
         """Skip Add-ons and click on Continue"""
         self.click(xpath=self.constants.CONTINUE_WITHOUT_ADD_XPATH)
