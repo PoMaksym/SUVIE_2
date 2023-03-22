@@ -11,3 +11,11 @@ class TestFirstCheckout:
     def test_privacy_opened(self, start_page, random_user):
         privacy = start_page.navigate_to_first_checkout(random_user)
         privacy.verify_privacy_opened()
+
+    def test_wrong_zip(self, start_page, random_user):
+        wrong_zip = start_page.navigate_to_first_checkout(random_user)
+        wrong_zip.verify_wrong_zip()
+
+    def test_invalid_zip(self, start_page, random_user):
+        invalid_zip = start_page.navigate_to_first_checkout(random_user)
+        invalid_zip.verify_invalid_zip()

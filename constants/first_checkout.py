@@ -18,3 +18,7 @@ class FirstCheckout:
     VERIFY_TERMS_COND_XPATH = './/div[@class="container mx-auto px-3 relative z-[1] max-w-5xl"]'
     VERIFY_TERMS_COND_TEXT = "Home Tech Innovation, Inc. Terms and Conditions"
     PRIVACY_POLICY_XPATH = './/a[@href="https://www.suvie.com/privacy-policy/"]'
+    WRONG_ZIP_ALERT_XPATH = '//*[@id="__next"]/main/section/div[2]/form/div[1]/div[2]'
+    WRONG_ZIP_ALERT_TEXT = "must contain only 5 digits"
+    INVALID_ZIP_ALERT_XPATH = './/div[@class="whitespace-pre"]'
+    INVALID_ZIP_ALERT_TEXT = "Not a valid US ZIP code"

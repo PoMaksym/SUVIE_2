@@ -65,3 +65,17 @@ class FirstCheckoutPage(BasePage):
         self.click(self.constants.PRIVACY_POLICY_XPATH)
         response = requests.get("https://www.suvie.com/privacy-policy/")
         assert response.status_code == 200
+
+    def verify_wrong_zip(self):
+        self.fill_field(xpath=self.constants.START_ZIPCODE_PLACEHOLDER, value="093")
+        self.fill_field(xpath=self.constants.START_EMAIL_PLACEHOLDER, value="test@test.com")
+        assert self.get_element_text(self.constants.WRONG_ZIP_ALERT_XPATH) == self.constants.WRONG_ZIP_ALERT_TEXT
+        f"Actual: {self.get_element_text(xpath=self.constants.WRONG_ZIP_ALERT_XPATH)}"
+
+    def verify_invalid_zip(self):
+        self.fill_field(xpath=self.constants.START_ZIPCODE_PLACEHOLDER, value="00000")
+        self.fill_field(xpath=self.constants.START_EMAIL_PLACEHOLDER, value="mpolulffffffffffffffak@suvi.com")
+        sleep(5)
+        self.click(xpath=self.constants.START_CONTINUE_BTN_XPATH)
+        assert self.get_element_text(self.constants.INVALID_ZIP_ALERT_XPATH) == self.constants.INVALID_ZIP_ALERT_TEXT
+        f"Actual: {self.get_element_text(xpath=self.constants.INVALID_ZIP_ALERT_XPATH)}"
