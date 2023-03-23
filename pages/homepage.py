@@ -22,7 +22,7 @@ class StartPage(BasePage):
     @wait_until_ok(timeout=5, period=1)
     @log_decorator
     def navigate_to_second_checkout(self, user):
-        """Go through checkout"""
+        """Navigate to second checkout"""
         self.click(xpath=self.constants.SHOP_BUTTON_XPATH)
         """Click on Buy now"""
         self.__scroll_down_and_click(xpath=self.constants.SECOND_BUY_NOW_XPATH)
@@ -32,7 +32,7 @@ class StartPage(BasePage):
     @wait_until_ok(timeout=5, period=1)
     @log_decorator
     def navigate_to_third_checkout(self, user):
-        """Click on Shop button in homepage"""
+        """Click Navigate to third checkout"""
         self.click(xpath=self.constants.SHOP_BUTTON_XPATH)
         """Click on Buy now"""
         self.__scroll_down_and_click(xpath=self.constants.THIRD_BUY_NOW_XPATH)
@@ -44,7 +44,6 @@ class StartPage(BasePage):
     def navigate_to_first_checkout(self, user):
         """Navigate to first checkout"""
         self.click(xpath=self.constants.SHOP_BUTTON_XPATH)
-        """Click on Buy now"""
         self.__scroll_down_and_click(xpath=self.constants.FIRST_BUY_NOW_XPATH)
         from pages.first_checkout import FirstCheckoutPage
         return FirstCheckoutPage(self.driver)

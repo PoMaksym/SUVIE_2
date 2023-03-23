@@ -22,3 +22,14 @@ class FirstCheckout:
     WRONG_ZIP_ALERT_TEXT = "must contain only 5 digits"
     INVALID_ZIP_ALERT_XPATH = './/div[@class="whitespace-pre"]'
     INVALID_ZIP_ALERT_TEXT = "Not a valid US ZIP code"
+    EMPTY_ZIP_CODE_XPATH = './/div[@class="form-error"]'
+    EMPTY_ZIP_CODE_TEXT = "Required"
+    EMPTY_EMAIL_START_XPATH = './/div[@class="form-error"][contains(text(), "Required")]'
+    EMPTY_EMAIL_START_TEXT = "Required"
+    INCORRECT_EMAIL_START_XPATH = './/div[@class="form-error"][contains(text(), "email must be a valid email")]'
+    INCORRECT_EMAIL_START_TEXT = "email must be a valid email"
+    SUVIE_PRICE_XPATH = './/span[contains(text(), {value})]'
+    TAXE_PRICE_XPATH = './/span[contains(text(), "$37.91")]'
+    TOTAL_PRICE_XPATH = './/div[@data-cy="order-total-total-price"]'
+    FOUR_SERVE_BUTTON_XPATH = './/div[@data-value="4"][text()="4 People"]'
+    TWO_SERVE_BUTTON_XPATH = './/div[@data-value="2"][text()="2 People"]'

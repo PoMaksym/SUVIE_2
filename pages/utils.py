@@ -22,7 +22,7 @@ def random_low():
 
 def random_num():
     """Generate random number"""
-    return str(random.randint(90210, 90210))
+    return str(random.randint(90001, 90001))
 
 
 def random_str(length=5):

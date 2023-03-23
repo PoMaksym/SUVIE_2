@@ -13,7 +13,7 @@ class SecondCheckoutPage(BasePage):
     @wait_until_ok(timeout=5, period=1)
     @log_decorator
     def fill_users_data_2(self, user):
-        """Skip Add-ons and click on Continue"""
+        """Fill fields with random valid data"""
         self.click(xpath=self.constants.CONTINUE_WITHOUT_ADD_XPATH)
         """Fill Contact fields - email field"""
         self.fill_field(xpath=self.constants.CONTACT_EMAIL_PLACEHOLDER, value=user.email)
@@ -39,6 +39,7 @@ class SecondCheckoutPage(BasePage):
     @wait_until_ok(timeout=5, period=0.5)
     @log_decorator
     def verify_total_checkout_without(self):
+        """Verify total without addons"""
         assert self.get_element_text(
             xpath=self.constants.SECOND_TOTAL_WITHOUT_XPATH) == self.constants.SECOND_TOTAL_VERIFY_TEXT
         f"Actual: {self.get_element_text(xpath=self.constants.SECOND_TOTAL_WITHOUT_XPATH)}"
@@ -46,6 +47,7 @@ class SecondCheckoutPage(BasePage):
     @wait_until_ok(timeout=5, period=0.5)
     @log_decorator
     def verify_checkout_complete(self):
+        """Verify checkout complete without Payment"""
         assert self.get_element_text(
             self.constants.VERIFY_PAYMENT_OPEN_XPATH) == self.constants.VERIFY_PAYMENT_OPEN_TEXT
         f"Actual: {self.get_element_text(xpath=self.constants.VERIFY_PAYMENT_OPEN_XPATH)}"
