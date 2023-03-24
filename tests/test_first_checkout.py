@@ -38,8 +38,8 @@ class TestFirstCheckout:
     # def test_total_price(self, start_page, random_user):
     #     t_price = start_page.navigate_to_first_checkout(random_user)
     #     t_price.fill_users_data(random_user)
-    #     t_price.verify_total_price()
-
+    # #     t_price.verify_total_price()
+    #
     def test_serve_click(self, start_page, random_user):
         serve = start_page.navigate_to_first_checkout(random_user)
         serve.verify_serve_clickable(random_user)

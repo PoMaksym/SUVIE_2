@@ -39,6 +39,7 @@ class ThirdCheckoutPage(BasePage):
     @wait_until_ok(timeout=5, period=0.5)
     @log_decorator
     def verify_checkout_complete(self):
+        """Verify fill fields with random valid data"""
         assert self.get_element_text(
             self.constants.VERIFY_PAYMENT_OPEN_XPATH) == self.constants.VERIFY_PAYMENT_OPEN_TEXT
         f"Actual: {self.get_element_text(xpath=self.constants.VERIFY_PAYMENT_OPEN_XPATH)}"
