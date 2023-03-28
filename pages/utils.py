@@ -22,7 +22,7 @@ def random_low():
 
 def random_num():
     """Generate random number"""
-    return str(random.randint(90210, 90210))
+    return str(random.randint(90001, 90001))
 
 
 def random_str(length=5):
@@ -53,7 +53,7 @@ def wait_until_ok(timeout=8, period=1):
 
 
 def log_decorator(original_function):
-    """Logging actions using docstings"""
+    """Logging actions using doc stings"""
 
     log = logging.getLogger("[LogDecorator]")
 
@@ -78,8 +78,8 @@ class User:
         """Fill fields with sample data"""
         user = random_str()
         self.firstname = f"{user}{random_str(7)}" if not firstname else firstname
-        self.email = f"{user}{random_num()}@gmail.com" if not email else email
-        self.lastname = f"{random_str(6)}{random_num()}" if not lastname else lastname
+        self.email = f"{user}{random_str(4)}@E2E.com" if not email else email
+        self.lastname = f"{user}{random_str(6)}{random_num()}" if not lastname else lastname
         self.address = f"{random_str(6)}{random_num()}" if not address else address
         self.city = f"{random_str(6)}{random_num()}" if not city else city
         self.zip = f"{random_num()}" if not zip else zip

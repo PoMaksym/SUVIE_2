@@ -2,7 +2,7 @@ import pytest
 from selenium import webdriver
 
 from constants.base import DRIVER_PATH, BASE_URL
-from pages.second_checkout_page import StartPage
+from pages.homepage import StartPage
 from pages.utils import User
 
 
@@ -24,4 +24,3 @@ def random_user():
     user = User()
     user.fill_data()
     return user
-
